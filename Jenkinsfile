@@ -1,9 +1,6 @@
-
-
-# Sample Jenkinsfile for execution
 node {
     stage('SCM') {
-        git 'https://github.com/naresh1919/time-tracker.git'
+        git 'https://github.com/shanthilakshmi/Test_JenkinsPipeline.git'
     }
     stage('clean') {
         sh label: '', script: 'mvn clean'
