@@ -1,5 +1,4 @@
 node {
-     stages {
         stage('SCM') {
             git 'https://github.com/shanthilakshmi/Test_JenkinsPipeline.git'
          }
@@ -12,5 +11,4 @@ node {
         stage( 'publish' ){
           sh lable: '', script: 'dotnet publish'
        }
-    }
 }
