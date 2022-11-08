@@ -1,8 +1,8 @@
 node {
-    stages {
-     stage('SCM') {
-        git 'https://github.com/shanthilakshmi/Test_JenkinsPipeline.git'
-    }
+     stages {
+        stage('SCM') {
+            git 'https://github.com/shanthilakshmi/Test_JenkinsPipeline.git'
+         }
     stage('clean') {
         sh label: '', script: 'dotnet clean'
     }
@@ -11,5 +11,6 @@ node {
     }
         stage( 'publish' ){
           sh lable: '', script: 'dotnet publish'
-        }
+       }
+    }
 }
