@@ -1,4 +1,7 @@
 node {
+    stages {
+        Stage(Java){
+            
     stage('SCM') {
         git 'https://github.com/shanthilakshmi/Test_JenkinsPipeline.git'
     }
