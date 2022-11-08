@@ -3,10 +3,10 @@ node {
         git 'https://github.com/shanthilakshmi/Test_JenkinsPipeline.git'
     }
     stage('clean') {
-        sh label: '', script: 'mvn clean'
+        sh label: '', script: 'ms clean'
     }
     stage('compile test package') {
-        sh label: '', script: 'mvn compile test package'
+        sh label: '', script: 'ms compile test package'
     }
 
     stage('junit test  Results') {
