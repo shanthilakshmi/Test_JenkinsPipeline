@@ -3,10 +3,10 @@ node {
         git 'https://github.com/shanthilakshmi/Test_JenkinsPipeline.git'
     }
     stage('clean') {
-        sh label: '', script: 'ms clean'
+        sh label: '', script: 'dotnet clean'
     }
     stage('compile test package') {
-        sh label: '', script: 'ms compile test package'
+        sh label: '', script: 'dotnet restore'
     }
 
     stage('junit test  Results') {
