@@ -1,0 +1,73 @@
+﻿@model WebApplication1.Models.SimpleApp
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SimpleApp</title>
+    <style>
+        body > div{
+            padding:10%;
+            margin-left:10%;
+            width: 50%;
+            justify-content:center;
+        }
+        legend{
+            margin-left: 47%;
+        }
+        .text-box {
+            margin-left: 28%;
+            justify-content: center;
+            height: 10%;
+            width: 50%;
+        }
+        input[type=submit]{
+            justify-content: center;
+            margin-left: 47%;
+            border-radius:2px;
+        }
+        .field-validation-error {
+            margin-left:38%;
+            color: red;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <div>
+
+        Routing Applied here, Observe URL. Instead of /Home/SimpleApp it's just /SimpleApp
+
+        @using (Ajax.BeginForm("Calculate", "Home", new AjaxOptions { }))
+        {
+
+            <fieldset>
+                <legend>Calulator</legend>
+
+
+                <div>
+                    @Html.EditorFor(x => x.expression)
+                    <p>
+                        @Html.ValidationMessageFor(x => x.expression)
+                    </p>
+
+                </div>
+
+
+                <p>
+                    <input type="submit" value="Calculate" />
+                </p>
+                <hr />
+                <div>@ViewBag.res</div>
+            </fieldset>
+        }
+
+        @Html.ActionLink("Go to home", "")
+    </div>
+</body>
+</html>

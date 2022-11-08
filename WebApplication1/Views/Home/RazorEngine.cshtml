@@ -1,0 +1,52 @@
+﻿@using WebApplication1.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RazorEngine</title>
+</head>
+<body>
+    <div>Here escape sequence is @@@@ 
+        <ul>
+            <li>Single Line - @@Expression Eg: @DateTime.Now </li>
+            <li>Sinle Line - MultiExpressions @@(exp1 operation exp2) Eg: 121 - 128 = @(121 - 128)</li>
+            <li>
+                Multi Line - @@{ Code } eg:
+                <ul>
+                    @{
+                        var i = 1;
+                        while (i < 5)
+                        {
+                            <li> List Item - @i </li>
+                            i++;
+                        }
+
+                    }
+                </ul>
+            </li>
+            <li>
+                To access model data we import models eg: @@using ApplicationName.Models
+                @{
+                    TestData td = new TestData()
+                    {
+                        id = 128,
+                        name = "new_data"
+                    };
+                    }
+                <ul>
+                    <li>
+                        Name = @td.name
+                    </li>
+                    <li>
+                        Id = @td.id
+                    </li>
+                </ul>
+            </li>
+           
+        </ul>
+        <a href='/Home'>Go to home</a>
+    </div>
+</body>
+</html>

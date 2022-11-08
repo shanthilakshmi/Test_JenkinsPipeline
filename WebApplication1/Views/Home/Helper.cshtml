@@ -1,0 +1,48 @@
+﻿@using WebApplication1.Models
+@model TestData
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Helper</title>
+</head>
+<body>
+    <div> 
+        <h1>Helpers</h1>
+        <ul>
+            <li>Helpers can be defined using @@helper which is like method to accomplish what we need. eg:</li>
+            @helper createLi(string[] list) 
+            { 
+                if (list.Length == 0) 
+                {
+                    <b>No Data</b>
+                }
+                else
+                {
+                    <ul>
+                        @foreach(var li in list)
+                        {
+                            <li>List Item - @li</li>
+                        }
+                    </ul>
+                }
+            }
+            <li>Example - 1 @createLi(new string[] { "A","B","C"})</li>
+            <li>Example - 2 @createLi(new string[] { })</li>
+            <li>Default Helper - Eg:  @@Html.TextBox() = @Html.TextBox("txtbox1","Value")</li>
+            <li>Strongly typed helpers are useful for retrieving data from controllers only after importing necessary models eg: id = @Html.DisplayTextFor(x => x.id), name = @Html.DisplayTextFor(y => y.name)</li>
+            @***********   to achieve custom helpers create a class in project eg: as CustomHelper, inlude System.Web.Mvc                    *@
+            <li>Custom helpers are those which enable to easily update attributes and provides customised HTML helpers</li>
+            <ul>eg:
+                <li>CustomHelper as reference @CustomHelper.Img("https://i.stack.imgur.com/1dpmw.gif", "Gif")</li>
+                <li>Html as reference @Html.bold("Bolder")</li>
+                <li>Creating Tags @Html.LinkTag("https://www.youtube.com/watch?v=9x_jdxFUjMQ","Chill Out")</li>
+            </ul>
+        </ul>
+        
+    </div>
+    @Html.ActionLink("Go to home","")
+</body>
+</html>
