@@ -5,9 +5,12 @@ node {
     stage('clean') {
         sh label: '', script: 'dotnet clean'
     }
-    stage('compile test package') {
+    stage('compile') {
         sh label: '', script: 'dotnet run'
     }
+        stage( 'Nuget pack' ) {
+         sh label: '', script: 'dotnet pack'
+        }
         stage( 'publish' ){
           sh lable: '', script: 'dotnet publish'
        }
