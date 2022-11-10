@@ -5,6 +5,9 @@ node {
     stage('clean') {
         sh label: '', script: 'dotnet clean'
     }
+        stage('build') {
+        sh label: '', script: 'dotnet build'
+        }
     stage('compile') {
         sh label: '', script: 'dotnet run'
     }
