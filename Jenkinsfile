@@ -11,8 +11,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        echo "The library will be build in ${env.CONFIGURATION}"
-        sh "msbuild /t:build /p:Configuration=${env.CONFIGURATION} /restore:True"
+        echo "The library will be build in "
+        sh "msbuild /t:build /restore:True"
       }
     }
     stage('Package') {
