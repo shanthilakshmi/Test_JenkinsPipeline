@@ -1,8 +1,5 @@
 
 pipeline {
-  environment {
-    CONFIGURATION = getConfiguration(env.BRANCH_NAME)
-  }
   agent any 
   stages {
     stage('Init') {
