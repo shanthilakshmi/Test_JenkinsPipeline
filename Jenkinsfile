@@ -24,7 +24,7 @@ pipeline {
     stage('Publish NuGet') {
       steps {
           echo 'Deploying'
-          sh "msbuild /t:publish/*.nupkg"
+          sh "msbuild /t:publish/.nupkg"
       }        
     }
   }
