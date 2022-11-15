@@ -24,7 +24,7 @@ pipeline {
     stage('Publish NuGet') {
       steps {
           echo 'Deploying'
-          sh "msbuild /t:publish/*.nupkg -SkipDuplicate -Source https://www.nuget.org/api/v2/package"
+          sh "msbuild /t:publish/*.nupkg"
       }        
     }
   }
