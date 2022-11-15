@@ -24,7 +24,7 @@ pipeline {
     stage('Publish NuGet') {
       steps {
           echo 'Deploying'
-          sh "nuget push build/*.nupkg -ApiKey ${NUGET_TOKEN} -SkipDuplicate -Source https://www.nuget.org/api/v2/package"
+          sh "nuget push build/*.nupkg -SkipDuplicate -Source https://www.nuget.org/api/v2/package"
       }        
     }
   }
