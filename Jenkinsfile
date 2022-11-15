@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Publish NuGet') {
       when {
-        branch 'master'
+        branch 'test'
       }
       steps {
         withCredentials([string(credentialsId: 'nuget_token', variable: 'NUGET_TOKEN')]) {
