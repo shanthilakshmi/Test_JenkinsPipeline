@@ -17,14 +17,14 @@ pipeline {
     }
     stage('Package') {
       steps {
-        sh "msbuild /t:nuget pack"
+        sh "msbuild /t:pack"
         sh 'cat */obj/*/*.nuspec'              
       }
     }
     stage('Publish NuGet') {
       steps {
           echo 'Deploying'
-          sh "nuget push build/*.nupkg -SkipDuplicate -Source https://www.nuget.org/api/v2/package"
+          sh "msbuild /t:publish/*.nupkg -SkipDuplicate -Source https://www.nuget.org/api/v2/package"
       }        
     }
   }
