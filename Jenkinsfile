@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Package') {
       steps {
-        sh "msbuild /t:nugetpack"
+        sh "msbuild /t:nuget pack"
         sh 'cat */obj/*/*.nuspec'              
       }
     }
