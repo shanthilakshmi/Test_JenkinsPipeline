@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Terradue.OpenNebula</RootNamespace>
     <AssemblyName>Terradue.OpenNebula</AssemblyName>
-    <TargetFrameworks>net472</TargetFrameworks>
+    <TargetFramework>net472</TargetFramework>
     <RuntimeIdentifiers>win;linux</RuntimeIdentifiers>
     <Authors>Enguerran Boissier</Authors>
     <Company>Terradue</Company>
