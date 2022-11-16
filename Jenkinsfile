@@ -23,7 +23,7 @@ pipeline {
     stage('Publish NuGet') {
       steps {
           echo 'Deploying'
-          sh "msbuild /t:publish net472"
+          sh "msbuild /t:publish"
       }        
     }
   }
