@@ -11,19 +11,19 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh "msbuild /t:build /restore:True"
+        sh "dotnet /t:build /restore:True"
       }
     }
     stage('Package') {
       steps {
-        sh "msbuild /t:pack"
+        sh "dotnet /t:pack"
         sh 'cat */obj/*/*.nuspec'              
       }
     }
     stage('Publish NuGet') {
       steps {
           echo 'Deploying'
-          sh "msbuild /t:publish net472"
+          sh "dotnet /t:publish -f net472"
       }        
     }
   }
