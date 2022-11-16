@@ -4,26 +4,26 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        sh 'sudo rm -rf packges */bin build'
-        sh 'sudo mkdir -p build'
-        sh 'sudo ls -la'
+        sh 'rm -rf packges */bin build'
+        sh 'mkdir -p build'
+        sh 'ls -la'
       }
     }
     stage('Build') {
       steps {
-        sh " sudo msbuild /t:build /restore:True"
+        sh "msbuild /t:build /restore:True"
       }
     }
     stage('Package') {
       steps {
-        sh "sudo msbuild /t:pack"
-        sh 'sudo cat */obj/*/*.nuspec'              
+        sh "msbuild /t:pack"
+        sh 'cat */obj/*/*.nuspec'              
       }
     }
     stage('Publish NuGet') {
       steps {
           echo 'Deploying'
-          sh "sudo msbuild /t:publish -f net472"
+          sh "msbuild /t:publish -f net472"
       }        
     }
   }
